@@ -8,118 +8,49 @@ export default function Activities() {
     { id: 'all', label: 'Toutes', icon: Target, color: 'from-gray-800 to-gray-900' },
     { id: 'sport', label: 'Sport', icon: Trophy, color: 'from-orange-500 to-amber-500' },
     { id: 'culture', label: 'Culture', icon: Music, color: 'from-purple-500 to-pink-500' },
-    { id: 'tech', label: 'Tech', icon: Laptop, color: 'from-blue-500 to-indigo-500' },
   ];
 
   const activities = [
-    {
-      title: 'Football',
-      category: 'sport',
-      description:
-        'Développez votre esprit d\'équipe, discipline et condition physique avec notre club de football compétitif.',
-      icon: Dumbbell,
-      image: 'https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800',
-      badge: 'Sport',
-      badgeColor: 'bg-gradient-to-r from-orange-500 to-amber-500',
-      participants: '25 élèves',
-      schedule: 'Lundi & Mercredi 16h-18h'
-    },
-    {
-      title: 'Club de Musique',
-      category: 'culture',
-      description:
-        'Initiation instrumentale, formation musicale et préparation aux spectacles et concerts scolaires.',
-      icon: Music,
-      image: 'https://images.pexels.com/photos/1751731/pexels-photo-1751731.jpeg?auto=compress&cs=tinysrgb&w=800',
-      badge: 'Culture',
-      badgeColor: 'bg-gradient-to-r from-purple-500 to-pink-500',
-      participants: '18 élèves',
-      schedule: 'Mardi 16h-18h'
-    },
-    {
-      title: 'Coding & Robotique',
-      category: 'tech',
-      description:
-        'Programmation Python/JavaScript, construction de robots Arduino, participation aux compétitions nationales.',
-      icon: Laptop,
-      image: 'https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=800',
-      badge: 'Tech',
-      badgeColor: 'bg-gradient-to-r from-blue-500 to-indigo-500',
-      participants: '22 élèves',
-      schedule: 'Jeudi 16h-18h30'
-    },
-    {
-      title: 'Atelier d\'Arts Plastiques',
-      category: 'culture',
-      description:
-        'Techniques de dessin, peinture à l\'huile, aquarelle, modelage et préparation d\'expositions.',
-      icon: Palette,
-      image: 'https://images.pexels.com/photos/1545998/pexels-photo-1545998.jpeg?auto=compress&cs=tinysrgb&w=800',
-      badge: 'Culture',
-      badgeColor: 'bg-gradient-to-r from-purple-500 to-pink-500',
-      participants: '15 élèves',
-      schedule: 'Vendredi 15h-17h'
-    },
-    {
-      title: 'Club de Lecture',
-      category: 'culture',
-      description:
-        'Analyse littéraire, discussions philosophiques, rencontres d\'auteurs et création de critiques.',
-      icon: BookOpen,
-      image: 'https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=800',
-      badge: 'Culture',
-      badgeColor: 'bg-gradient-to-r from-purple-500 to-pink-500',
-      participants: '20 élèves',
-      schedule: 'Mercredi 14h-16h'
-    },
-    {
-      title: 'Langues Étrangères',
-      category: 'culture',
-      description:
-        'Anglais, espagnol, allemand - Conversation, préparation aux certifications et échanges culturels.',
-      icon: Globe,
-      image: 'https://images.pexels.com/photos/267669/pexels-photo-267669.jpeg?auto=compress&cs=tinysrgb&w=800',
-      badge: 'Culture',
-      badgeColor: 'bg-gradient-to-r from-purple-500 to-pink-500',
-      participants: '30 élèves',
-      schedule: 'Lundi & Jeudi 16h-17h30'
-    },
     {
       title: 'Basketball',
       category: 'sport',
       description:
         'Perfectionnement technique, stratégies d\'équipe, compétitions interscolaires et développement physique.',
       icon: Dumbbell,
-      image: 'https://images.pexels.com/photos/358042/pexels-photo-358042.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://scontent.frba3-2.fna.fbcdn.net/v/t39.30808-6/493760422_726474116373376_955926635309603708_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFEglhiSoJkFntpjR1_WvnrX_m_4UL1uz9f-b_hQvW7P7n8NtYjBVmNUjzBBLAZH-Pj6cYdaL5s_5cTf1wRdPGG&_nc_ohc=XRgTg_5jkpIQ7kNvwHtRll5&_nc_oc=AdmYAmAbp2ab3HbCZex20fT29lLSaBXy1rTE6ewIPKFKt-LImZ_1adoF_1Kf9CU4dxo&_nc_zt=23&_nc_ht=scontent.frba3-2.fna&_nc_gid=wxytzTuT65JP7Zv7IU8AIg&oh=00_AfkkmueATK2loUyQmpOREDoRUl-64P1bz0EO_a6X2nyS_w&oe=6958D021',
+      badge: 'Sport',
+      badgeColor: 'bg-gradient-to-r from-orange-500 to-amber-500',
+      participants: '25 élèves',
+    },
+  
+    {
+      title: 'Mémorisation et de récitation du Saint Coran',
+      category: 'culture',
+      description:
+        'Organisation d’un concours de mémorisation et de récitation du Saint Coran, couronné par la remise de prix aux lauréats dans une ambiance spirituelle et éducative.',
+      icon: Laptop,
+      image: 'https://scontent.frba3-2.fna.fbcdn.net/v/t39.30808-6/482274336_689207016766753_7921188282621896924_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE8VIfnbxATsVo5y6PPD9nTCmAioPeyVt8KYCKg97JW37-jva50wkl_UKBQ66gxdpVRvG83BIEZR76CW-xBG4TN&_nc_ohc=hqv8gEUBWlsQ7kNvwFj5rI9&_nc_oc=AdkUYqGHpZglXJLx8gPxId7qBjU5TSxpId8amTejWA8oDNEuWafG6pAqFnKypQpKcuQ&_nc_zt=23&_nc_ht=scontent.frba3-2.fna&_nc_gid=F7wuI3W46Pql_HjD47I2KA&oh=00_AfmpwWATPqDRjtujl7eYVnbgPbbYIwO2GGhlZ7HKa0m6YA&oe=6958FA29',
+      badge: 'Tech',
+      badgeColor: 'bg-gradient-to-r from-blue-500 to-indigo-500',
+      participants: '22 élèves',
+      
+    },
+ 
+    
+   
+    {
+      title: 'Football',
+      category: 'sport',
+      description:
+        'Développez votre esprit d\'équipe, discipline et condition physique avec notre club de football compétitif.',
+      icon: Dumbbell,
+      image: 'https://scontent.frba3-1.fna.fbcdn.net/v/t39.30808-6/484955471_696760329344755_6780197809049166420_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFwSsVHIfKbFoJ9BtTyDTHmAbjbjPsZecoBuNuM-xl5yrRdgcYsvFI0peTdIdC4pTmJt0Li_FD_A9yOExmeRvUM&_nc_ohc=AR2YTYUj6SwQ7kNvwHb8tib&_nc_oc=Adn-py2O1yCHCBCmnWrI3B8-5EfiwlGdOYVVZVbi6MAyeyK1MRmHmVQFG_n7MvJaSVs&_nc_zt=23&_nc_ht=scontent.frba3-1.fna&_nc_gid=yPJJluI0eSVbKvDp0Na7PQ&oh=00_AfmOhmQcpIgBCH43OehwfJA6z7TWxyKcRo3x_djDZuVrig&oe=6958F3AE',
       badge: 'Sport',
       badgeColor: 'bg-gradient-to-r from-orange-500 to-amber-500',
       participants: '28 élèves',
-      schedule: 'Mardi & Vendredi 16h-18h'
     },
-    {
-      title: 'Design Graphique',
-      category: 'tech',
-      description:
-        'Photoshop, Illustrator, création d\'affiches, design web et préparation de portfolios professionnels.',
-      icon: Laptop,
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      badge: 'Tech',
-      badgeColor: 'bg-gradient-to-r from-blue-500 to-indigo-500',
-      participants: '16 élèves',
-      schedule: 'Mercredi 16h-18h'
-    },
-    {
-      title: 'Échecs',
-      category: 'culture',
-      description:
-        'Stratégies avancées, tournois internes, préparation aux compétitions nationales de jeu d\'échecs.',
-      icon: BookOpen,
-      image: 'https://images.pexels.com/photos/260024/pexels-photo-260024.jpeg?auto=compress&cs=tinysrgb&w=800',
-      badge: 'Culture',
-      badgeColor: 'bg-gradient-to-r from-purple-500 to-pink-500',
-      participants: '12 élèves',
-      schedule: 'Jeudi 15h-17h'
-    },
+   
+    
   ];
 
   const filteredActivities =
@@ -249,7 +180,6 @@ export default function Activities() {
                       </div>
                       <div className="flex items-center text-sm text-gray-500">
                         <Zap className="w-4 h-4 mr-2 text-gray-400" />
-                        <span>{activity.schedule}</span>
                       </div>
                     </div>
                   </div>
