@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageSquare, BookOpen, GraduationCap, Home, Images, Newspaper, Phone } from 'lucide-react';
+import { Menu, X, MessageSquare, BookOpen, Home, Images, Newspaper, Phone } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ export default function Navbar() {
     { path: '/', label: 'Accueil', icon: <Home className="w-4 h-4" /> },
     { path: '/activities', label: 'Activités', icon: <BookOpen className="w-4 h-4" /> },
     { path: '/gallery', label: 'Galerie', icon: <Images className="w-4 h-4" /> },
-    { path: '/news', label: 'Actualités', icon: <Newspaper className="w-4 h-4" /> },
+    { path: '/news', label: 'Atelier', icon: <Newspaper className="w-4 h-4" /> },
     { path: '/contact', label: 'Contact', icon: <Phone className="w-4 h-4" /> },
   ];
 

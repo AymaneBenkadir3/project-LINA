@@ -22,6 +22,7 @@ export default function Gallery() {
       url: img,
       title: 'La drogue',
       date: '2025',
+      realisePar: 'khadija Saibari',
       description:
         'Affiche de prévention qui alerte sur les dangers de la drogue et encourage à dire non pour protéger sa santé et son avenir.'
     },
@@ -29,6 +30,7 @@ export default function Gallery() {
       url: img1,
       title: 'La sécheresse',
       date: '2025',
+      realisePar: 'LABDYOUI Yasmine',
       description:
         'Affiche de sensibilisation sur le manque d’eau et ses effets sur la vie.'
     },
@@ -36,6 +38,7 @@ export default function Gallery() {
       url: img2,
       title: 'Victoire du Maroc 🇲🇦',
       date: '2025',
+      realisePar: 'Khadija',
       description:
         'Une immense fierté nationale et un message d’espoir pour la jeunesse.'
     },
@@ -129,8 +132,16 @@ export default function Gallery() {
               <h3 className="font-bold text-gray-800 truncate">
                 {image.title}
               </h3>
-              <p className="text-sm text-gray-600 truncate">
+
+              <p className="text-sm text-gray-600 truncate mb-2">
                 {image.description}
+              </p>
+
+              <p className="text-xs text-gray-500">
+                <span className="font-semibold text-gray-700">
+                  Réalisé par :
+                </span>{' '}
+                {image.realisePar}
               </p>
             </div>
           </div>
@@ -190,10 +201,19 @@ export default function Gallery() {
             <h3 className="text-xl font-bold">
               {images[selectedImageIndex].title}
             </h3>
+
             <p className="text-gray-300 max-w-2xl mx-auto">
               {images[selectedImageIndex].description}
             </p>
+
             <p className="text-sm text-gray-400 mt-2">
+              <span className="font-semibold text-gray-300">
+                Réalisé par :
+              </span>{' '}
+              {images[selectedImageIndex].realisePar}
+            </p>
+
+            <p className="text-sm text-gray-400 mt-1">
               {selectedImageIndex + 1} / {images.length}
             </p>
           </div>
