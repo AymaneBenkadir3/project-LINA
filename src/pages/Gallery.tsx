@@ -7,64 +7,28 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-import img from '../assets/img.jpeg';
-import img1 from '../assets/img1.jpeg';
-import img2 from '../assets/img2.jpeg';
-import img3 from '../assets/img3.jpeg';
-import img4 from '../assets/img4.jpeg';
+/* ================= IMPORT AUTOMATIQUE DES IMAGES ================= */
+const imageModules = import.meta.glob('../assets/*.{jpg,jpeg,png}', {
+  eager: true
+}) as Record<string, { default: string }>;
+
+const imagesData = Object.values(imageModules).map((mod, index) => ({
+  url: mod.default,
+  title: `Projet pédagogique ${index + 1}`,
+  date: index < 5 ? '2025' : '2024',
+  realisePar: 'Élèves',
+  description:
+    'Projet pédagogique réalisé par les élèves dans le cadre d’activités éducatives et collaboratives.'
+}));
 
 export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
-  const images = [
-    {
-      url: img,
-      title: 'La drogue',
-      date: '2025',
-      realisePar: 'khadija Saibari',
-      description:
-        'Affiche de prévention qui alerte sur les dangers de la drogue et encourage à dire non pour protéger sa santé et son avenir.'
-    },
-    {
-      url: img1,
-      title: 'La sécheresse',
-      date: '2025',
-      realisePar: 'LABDYOUI Yasmine',
-      description:
-        'Affiche de sensibilisation sur le manque d’eau et ses effets sur la vie.'
-    },
-    {
-      url: img2,
-      title: 'Victoire du Maroc 🇲🇦',
-      date: '2025',
-      realisePar: 'Khadija',
-      description:
-        'Une immense fierté nationale et un message d’espoir pour la jeunesse.'
-    },
-    {
-      url: img3,
-      title: 'Travail de groupe – Découverte des plantes',
-      date: '2024',
-      description:
-        'Activité de travail en groupe consacrée à la découverte des plantes, où les participants apprennent à identifier, planter et entretenir différentes espèces tout en développant l’esprit de coopération.'
-    },
-    {
-      url: img4,
-      title: 'Atelier environnemental',
-      date: '2024',
-      description:
-        'Atelier pratique autour des plantes et de l’environnement, permettant aux participants de collaborer et de renforcer leur sensibilisation à la protection de la nature.'
-    }
-  ];
-
   const openImage = (index: number) => {
-    setSelectedImage(images[index].url);
     setSelectedImageIndex(index);
   };
 
   const closeImage = () => {
-    setSelectedImage(null);
     setSelectedImageIndex(null);
   };
 
@@ -73,17 +37,16 @@ export default function Gallery() {
 
     const newIndex =
       direction === 'prev'
-        ? (selectedImageIndex - 1 + images.length) % images.length
-        : (selectedImageIndex + 1) % images.length;
+        ? (selectedImageIndex - 1 + imagesData.length) % imagesData.length
+        : (selectedImageIndex + 1) % imagesData.length;
 
-    setSelectedImage(images[newIndex].url);
     setSelectedImageIndex(newIndex);
   };
 
   /* 🔒 Bloquer le scroll quand la lightbox est ouverte */
   useEffect(() => {
-    document.body.style.overflow = selectedImage ? 'hidden' : '';
-  }, [selectedImage]);
+    document.body.style.overflow = selectedImageIndex !== null ? 'hidden' : '';
+  }, [selectedImageIndex]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -111,7 +74,7 @@ export default function Gallery() {
 
       {/* ================= GRID ================= */}
       <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {images.map((image, index) => (
+        {imagesData.map((image, index) => (
           <div
             key={index}
             onClick={() => openImage(index)}
@@ -149,7 +112,7 @@ export default function Gallery() {
       </section>
 
       {/* ================= LIGHTBOX ================= */}
-      {selectedImage && selectedImageIndex !== null && (
+      {selectedImageIndex !== null && (
         <div
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
           onClick={closeImage}
@@ -190,31 +153,31 @@ export default function Gallery() {
             onClick={e => e.stopPropagation()}
           >
             <img
-              src={selectedImage}
+              src={imagesData[selectedImageIndex].url}
               alt="Image agrandie"
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-zoomIn"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
             />
           </div>
 
           {/* Info */}
           <div className="absolute bottom-6 text-center text-white px-6">
             <h3 className="text-xl font-bold">
-              {images[selectedImageIndex].title}
+              {imagesData[selectedImageIndex].title}
             </h3>
 
             <p className="text-gray-300 max-w-2xl mx-auto">
-              {images[selectedImageIndex].description}
+              {imagesData[selectedImageIndex].description}
             </p>
 
             <p className="text-sm text-gray-400 mt-2">
               <span className="font-semibold text-gray-300">
                 Réalisé par :
               </span>{' '}
-              {images[selectedImageIndex].realisePar}
+              {imagesData[selectedImageIndex].realisePar}
             </p>
 
             <p className="text-sm text-gray-400 mt-1">
-              {selectedImageIndex + 1} / {images.length}
+              {selectedImageIndex + 1} / {imagesData.length}
             </p>
           </div>
         </div>
